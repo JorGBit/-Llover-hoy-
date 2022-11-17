@@ -1,6 +1,8 @@
 "use strict";
 const button = document.querySelector("button");
 const section = document.querySelector("section");
+const main = document.querySelector("main");
+
 button.addEventListener("click", () => {
   let longitud;
   let latitud;
@@ -16,7 +18,7 @@ button.addEventListener("click", () => {
         })
         .then((data) => {
           //   console.log(data);
-          
+
           for (let i = 1; i <= 8; i++) {
             const { humidity, date, temperature, hour_data, text } =
               data.hour_hour[`hour${i}`];
