@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  width: 10vw;
+}
+header {
+  text-align: center;
+  color: white;
+  background-color: rgb(26, 110, 183);
+  padding: 2rem;
+}
+
+footer {
+  padding: 2rem;
+  background-color: #353535;
+  color: white;
+  text-align: center;
+}
+
+main {
+  background-image: url(/imagenes/hombreTiempo.jpg);
+}

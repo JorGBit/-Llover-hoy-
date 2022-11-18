@@ -7,7 +7,7 @@ button.addEventListener("click", () => {
   let latitud;
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((posicion) => {
-      latitud = posicion.coords.latitude;
+      latitud = "x";
       longitud = posicion.coords.longitude;
       console.log(latitud, longitud);
       const url = `https://api.tutiempo.net/json/?lan=es&apid=qCY44X4zazXf33p&ll=${latitud},${longitud}`;
@@ -63,5 +63,7 @@ button.addEventListener("click", () => {
           console.log(error);
         });
     });
+  } else {
+    prompt("Lo siento no hemos podido localizar tu ubicación");
   }
 });
