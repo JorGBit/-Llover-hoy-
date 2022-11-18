@@ -1,6 +1,8 @@
 "use strict";
 const button = document.querySelector("button");
 const section = document.querySelector("section");
+const main = document.querySelector("main");
+const lloverHoy = document.getElementById("city");
 
 button.addEventListener("click", () => {
   let longitud;
@@ -17,6 +19,7 @@ button.addEventListener("click", () => {
         })
         .then((data) => {
           console.log(data);
+          lloverHoy.textContent = data.locality.name;
 
           for (let i = 1; i <= 8; i++) {
             const { humidity, date, temperature, hour_data, text } =
@@ -31,7 +34,7 @@ button.addEventListener("click", () => {
 
             h2.textContent = text;
             temperatureP.textContent = `${temperature}ºC`;
-            humidityP.textContent = `${humidity}%`;
+            humidityP.textContent = `${humidity}% Hum`;
             horaP.textContent = hour_data;
             dateP.textContent = date;
 
