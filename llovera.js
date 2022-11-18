@@ -6,8 +6,24 @@ button.addEventListener("click", () => {
   let longitud;
   let latitud;
   if (navigator.geolocation) {
+   const options = {
+     enableHighAccuracy: true,
+     timeout: 5000,
+     maximumAge: 0
+    };
+    
+    function success(pos) {
+     const crd = pos.coords;
+    }
+    
+    function error(err) {
+      alert(`¡Para decirte el tiempo, necesitamos conocer tu geolocalización!`);
+    }
+    
+    navigator.geolocation.getCurrentPosition(success, error, options);
+    
     navigator.geolocation.getCurrentPosition((posicion) => {
-      latitud = "x";
+      latitud = posicion.coords.latitude;
       longitud = posicion.coords.longitude;
       console.log(latitud, longitud);
       const url = `https://api.tutiempo.net/json/?lan=es&apid=qCY44X4zazXf33p&ll=${latitud},${longitud}`;
@@ -63,7 +79,6 @@ button.addEventListener("click", () => {
           console.log(error);
         });
     });
-  } else {
-    prompt("Lo siento no hemos podido localizar tu ubicación");
+  } 
   }
 });
