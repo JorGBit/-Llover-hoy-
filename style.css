@@ -4,23 +4,94 @@
   box-sizing: border-box;
 }
 
-button {
-  width: 10vw;
-}
-header {
-  text-align: center;
-  color: white;
-  background-color: rgb(26, 110, 183);
-  padding: 2rem;
+/* .container.day{
+  background-image: url(/imagenes/mountains.jpg);
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center;
 }
 
-footer {
-  padding: 2rem;
-  background-color: #353535;
-  color: white;
-  text-align: center;
+.container.after{
+  background-image: url(/imagenes/paisaje.jpg);
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center;
 }
+
+.container.night{
+  background-image: url(/imagenes/anochecer.jpg);
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center; */
+/* } */
+button {
+  width: 10rem;
+  height: 3rem;
+  font-size: 18px;
+  background-color: transparent;
+  text-align: cente;
+  margin: 1rem auto;
+}
+
+
+button:hover,
+button:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742; 
+  
+}
+
+
+button:active {
+  opacity: 0.5;
+}
+
+
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+}
+
 
 main {
-  background-image: url(/imagenes/hombreTiempo.jpg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  padding: 2rem;
+  background-image: url(/imagenes/paisaje.jpg);
+  background-size: 100% 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+
+section {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1rem;
+  text-align: center;
+}
+article {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 0;
+  box-shadow: rgba(4, 142, 255, 0.333) 0px 10px 20px,
+    rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: space-around;
+}
+article h2 {
+  font-size: 19px;
+  margin-bottom: 0.3rem;
+  text-align: center;
 }
