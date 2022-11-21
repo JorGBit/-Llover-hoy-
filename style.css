@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 button {
@@ -49,6 +50,7 @@ main {
   background-size: 100% 100%;
   justify-content: center;
   text-align: center;
+ 
 }
 
 
@@ -94,6 +96,7 @@ h1{
   background-image: url("/imagenes/mountains.jpg");
   background-repeat:no-repeat;
   background-position: center;
+
 }
 
 .container.night{
@@ -118,7 +121,11 @@ button.light{
   
 }
 h1{
-  color:rgb(255, 255, 255);
+  color:rgb(16, 15, 15);
   background-position: 0 0;
  background: opacity 1em;
 }
+
+
+
+
