@@ -39,6 +39,28 @@ body {
   align-content: flex-end;
 }
 
+.container.morning{
+  background-image: url("/imagenes/paisaje.jpg");
+  background-repeat:no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.container.after{
+  background-image: url("/imagenes/mountains.jpg");
+  background-repeat:no-repeat;
+  background-position: center;
+background-size: cover;
+}
+
+.container.night{
+  background-image: url("/imagenes/anochecer.jpg");
+  background-repeat:no-repeat;
+  background-position: center;
+  color:white;
+  background-size: cover;
+}
+
 
 main {
   display: flex;
@@ -86,25 +108,7 @@ h1{
   padding: 3rem;
 }
 
-.container.morning{
-  background-image: url("/imagenes/paisaje.jpg");
-  background-repeat:no-repeat;
-  background-position: center;
-}
 
-.container.after{
-  background-image: url("/imagenes/mountains.jpg");
-  background-repeat:no-repeat;
-  background-position: center;
-
-}
-
-.container.night{
-  background-image: url("/imagenes/anochecer.jpg");
-  background-repeat:no-repeat;
-  background-position: center;
-  color:white;
-}
 button.dark{
   color:white;
   border-color: white;
@@ -125,6 +129,7 @@ h1{
   background-position: 0 0;
  background: opacity 1em;
 }
+
 
 
 
