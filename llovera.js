@@ -67,12 +67,12 @@ button.addEventListener("click", () => {
               siLLueve === "Muy nuboso con lluvias"
             ) {
               const h1 = document.createElement("h1");
-              h1.textContent = "En las proximas 8h lloverá";
+              h1.textContent = "En las próximas 8h lloverá";
               body.append(h1);
               break;
             } else {
               const h1 = document.createElement("h1");
-              h1.textContent = "En las proximas 8h no lloverá";
+              h1.textContent = "En las próximas 8h no lloverá";
               main.append(h1);
               break;
             }
@@ -147,3 +147,6 @@ button2.addEventListener('click',(buttom)=>{
   location.reload();
 }
 )
+
+
+
