@@ -4,33 +4,15 @@
   box-sizing: border-box;
 }
 
-/* .container.day{
-  background-image: url(/imagenes/mountains.jpg);
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-position:center;
-}
-
-.container.after{
-  background-image: url(/imagenes/paisaje.jpg);
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-position:center;
-}
-
-.container.night{
-  background-image: url(/imagenes/anochecer.jpg);
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-position:center; */
-/* } */
 button {
   width: 10rem;
   height: 3rem;
   font-size: 18px;
-  background-color: transparent;
+ opacity: 0.8;
+ background-color:transparent;
   text-align: cente;
   margin: 1rem auto;
+  color:black;
 }
 
 
@@ -89,9 +71,54 @@ article {
   flex-direction: column;
   align-items: center;
   justify-items: space-around;
+  opacity:1;
 }
 article h2 {
   font-size: 19px;
   margin-bottom: 0.3rem;
   text-align: center;
+}
+
+h1{
+  font-size: 44px;
+  padding: 3rem;
+}
+
+.container.morning{
+  background-image: url("/imagenes/paisaje.jpg");
+  background-repeat:no-repeat;
+  background-position: center;
+}
+
+.container.after{
+  background-image: url("/imagenes/mountains.jpg");
+  background-repeat:no-repeat;
+  background-position: center;
+}
+
+.container.night{
+  background-image: url("/imagenes/anochecer.jpg");
+  background-repeat:no-repeat;
+  background-position: center;
+  color:white;
+}
+button.dark{
+  color:white;
+  border-color: white;
+  background-color:grey;
+  border-color: white;
+  
+}
+
+button.light{
+  color:black;
+  border-color: white;
+  background-color:grey;
+  border-color: white;
+  
+}
+h1{
+  color:rgb(255, 255, 255);
+  background-position: 0 0;
+ background: opacity 1em;
 }
