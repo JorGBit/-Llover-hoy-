@@ -4,7 +4,30 @@ const section = document.querySelector("section");
 const lloverHoy = document.getElementById("city");
 const refresh = document.querySelector("refresh");
 const main = document.querySelector("main");
+const actualHour = new Date();
+const now = new Date();
+now.getHours();
+console.log(now.getHours());
 
+  if(now.getHours()>=7 && now.getHours()<=14){
+    container.classList.remove("night");
+    container.classList.add("morning");
+    
+  }
+  if(now.getHours()>=15 && now.getHours()<=19){
+
+    container.classList.remove("morning");
+    container.classList.add("after");
+   
+  }
+  if(now.getHours()>=20 && now.getHours()<=6){
+ 
+    container.classList.remove("after");
+    container.classList.add("night");
+    button.classList.add("dark");
+    button2.classList.add("dark");
+  }
+  
 button2.style.display ="none";
 
 button.addEventListener("click", () => {
@@ -33,8 +56,8 @@ button.addEventListener("click", () => {
           return response.json();
         })
         .then((data) => {
-          console.log(data);
-          lloverHoy.textContent = `Nos encontramos en: ${data.locality.name}`
+          // console.log(data);
+          lloverHoy.textContent = `Usted se encuentra en: ${data.locality.name}`
           
           for (let y = 1; y <= 8; y++) {
             const siLLueve = data.hour_hour[`hour${y}`].text;
@@ -124,4 +147,3 @@ button2.addEventListener('click',(buttom)=>{
   location.reload();
 }
 )
-
