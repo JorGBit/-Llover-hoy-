@@ -10,25 +10,22 @@ const now = new Date();
 now.getHours();
 console.log(now.getHours());
 
-  if(now.getHours()>=7 && now.getHours()<=14){
-    container.classList.remove("night");
-    container.classList.add("morning");
-    }
-  if(now.getHours()>=15 && now.getHours()<=19){
+if (now.getHours() >= 7 && now.getHours() <= 14) {
+  container.classList.remove("night");
+  container.classList.add("morning");
+}
+if (now.getHours() >= 15 && now.getHours() <= 19) {
+  container.classList.remove("morning");
+  container.classList.add("after");
+}
+if (now.getHours() >= 20) {
+  container.classList.remove("after");
+  container.classList.add("night");
+  button.classList.add("dark");
+  button2.classList.add("dark");
+}
 
-    container.classList.remove("morning");
-    container.classList.add("after");
-   
-  }
-  if(now.getHours()>=20){
- 
-    container.classList.remove("after");
-    container.classList.add("night");
-    button.classList.add("dark");
-    button2.classList.add("dark");
-  }
-  
-button2.style.display ="none";
+button2.style.display = "none";
 
 button.addEventListener("click", () => {
   let longitud;
@@ -58,12 +55,13 @@ button.addEventListener("click", () => {
         })
         .then((data) => {
           console.log(data);
-          lloverHoy.textContent = `Usted se encuentra en: ${data.locality.name}`
-          
+          lloverHoy.textContent = `Usted se encuentra en: ${data.locality.name}`;
+
           for (let y = 1; y <= 8; y++) {
             const siLLueve = data.hour_hour[`hour${y}`].text;
-
+            console.log(siLLueve);
             if (
+              siLLueve === "Cubierto con lluvia" ||
               siLLueve === "Muy nuboso con lluvias" ||
               siLLueve === "Cubierto con lluvias" ||
               siLLueve === "Parcilmente nuboso con lluvias" ||
@@ -74,14 +72,12 @@ button.addEventListener("click", () => {
               main.append(h1);
               break;
             }
-            if (siLLueve === data.hour_hour[`hour${8}`].text) {
+            if (y >= 8) {
               const h1 = document.createElement("h1");
               h1.textContent = "En las próximas 8h no lloverá";
               main.append(h1);
-              break;
             }
           }
- 
 
           for (let i = 1; i <= 8; i++) {
             const { humidity, date, temperature, hour_data, text } =
@@ -94,17 +90,16 @@ button.addEventListener("click", () => {
             const horaP = document.createElement("p");
             const dateP = document.createElement("p");
 
-
             h2.textContent = text;
             temperatureP.textContent = `${temperature}ºC`;
             humidityP.textContent = `${humidity}% Hum`;
             horaP.textContent = hour_data;
             dateP.textContent = date;
 
-          switch (text) {
+            switch (text) {
               case `Despejado`:
                 icono.src = "/animated/day.svg";
-               break;
+                break;
               case `Cubierto`:
               case `Parcialmente nuboso`:
                 icono.src = "/animated/cloudy-day-1.svg";
@@ -113,7 +108,7 @@ button.addEventListener("click", () => {
               case "Nubes dispersas":
                 icono.src = "/animated/cloudy.svg";
                 break;
-              case "Cubierto con lluvias":
+              case "Cubierto con lluvia":
               case "Parcialmente nuboso con lluvias":
                 icono.src = "/animated/rainy-5.svg";
                 break;
@@ -124,14 +119,11 @@ button.addEventListener("click", () => {
                 break;
               case "Cubierto con tormentas":
                 icono.src = "/animated/thunder.svg";
-              }
-           
-              article.append(h2, temperatureP, icono, humidityP, horaP, dateP);
-              section.append(article);
-                     
-          
-          }
+            }
 
+            article.append(h2, temperatureP, icono, humidityP, horaP, dateP);
+            section.append(article);
+          }
         })
         .catch((error) => {
           console.log(error);
@@ -140,15 +132,12 @@ button.addEventListener("click", () => {
   }
 });
 
-button.addEventListener('click', (buttom) => {
- button.style.display ="none";
- button2.style.display = "";
-
-})
-button2.addEventListener('click',(buttom)=>{
+button.addEventListener("click", (buttom) => {
+  button.style.display = "none";
+  button2.style.display = "";
+});
+button2.addEventListener("click", (buttom) => {
   location.reload();
-}
-)
-
+});
 
 
